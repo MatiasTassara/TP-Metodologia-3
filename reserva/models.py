@@ -19,10 +19,10 @@ class RealState(models.Model):
     capacity = models.IntegerField()
     city = models.ForeignKey(City, null=True, on_delete=models.SET_NULL)
     owner = models.ForeignKey(User, null=False, on_delete=models.SET('null'))
-    image = models.ImageField(upload_to='application/img', null=True)
+    image = models.ImageField(upload_to='images/', null=True)
 
     def __str__(self):
-        return self
+        return self.name
 
 
 class Reservation(models.Model):

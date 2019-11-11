@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
+        integrity="sha256-9mbkOfVho3ZPXfM7W8sV2SndrGDuh7wuyLjtsWeTI1Q=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
+        integrity="sha256-9mbkOfVho3ZPXfM7W8sV2SndrGDuh7wuyLjtsWeTI1Q=" crossorigin="anonymous" />
+    <title>Reservas</title>
+</head>
+
+<body>
+    <div class="ui top fixed pointing menu">
+      <a class="active item">
+        Home
+      </a>
+    </div>
+    <div class="ui container" style="padding-top: 50px ">
+        <div class="ui segment">
+                <div class="ui divided items">
+                    {% for realState in realStates %}
+                        <div class="item">
+                          <div class="ui small image">
+                            <img src="{{realState.image.url}}">
+                          </div>
+                          <div class="middle aligned content">
+                            <div class="header">
+                              {{realState.name}}
+                            </div>
+                            <div class="meta">
+                              <span>${{realState.price}}</span>
+                              <span class="stay">1 Día</span>
+                            </div>
+                            <div class="description">
+                              <p>{{realState.description}}</p>
+                            </div>
+                            <div class="extra">
+                              <div class="ui right floated">
+                                <button class="ui green button">Ver Info</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        {% endfor %}
+  
+        </div>
+    </div>
+
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"
+    integrity="sha256-t8GepnyPmw9t+foMh3mKNvcorqNHamSKtKRxxpUEgFI=" crossorigin="anonymous"></script>
+
+</html>
