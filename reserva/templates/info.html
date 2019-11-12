@@ -1,19 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
-        integrity="sha256-9mbkOfVho3ZPXfM7W8sV2SndrGDuh7wuyLjtsWeTI1Q=" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
-        integrity="sha256-9mbkOfVho3ZPXfM7W8sV2SndrGDuh7wuyLjtsWeTI1Q=" crossorigin="anonymous" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
+      integrity="sha256-9mbkOfVho3ZPXfM7W8sV2SndrGDuh7wuyLjtsWeTI1Q="
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
+      integrity="sha256-9mbkOfVho3ZPXfM7W8sV2SndrGDuh7wuyLjtsWeTI1Q="
+      crossorigin="anonymous"
+    />
     <title>Document</title>
-</head>
+  </head>
 
-<body>
-FUNCIONAAAAAAAAAAAAAAAAAAa
-</body>
-
+  <body>
+    <div class="ui top fixed pointing menu">
+      <a href="" class="active item">
+        Home
+      </a>
+    </div>
+    <div class="ui container" style="padding:65px">
+      <div class="ui segment">
+        <h2>{{realState.name}}</h2>
+        <div class="ui centered fluid card">
+          <div class="image">
+            <img src="{{realState.image.url}}" />
+          </div>
+          <div class="content">
+            <p class="header">
+              {{realState.name}} - ${{realState.price}} por noche
+            </p>
+            <div class="meta">
+              <p>{{realState.city.province}}, {{realState.city.name}}</p>
+            </div>
+            <div class="description">
+              {{realState.description}}
+            </div>
+          </div>
+          <div class="extra content">
+            <form class="ui form">
+              <div class="ui four fields">
+                <div class="field">
+                  <label>Nombre</label>
+                  <input type="text" placeholder="Nombre" />
+                </div>
+                <div class="field">
+                  <label>Fecha Desde</label>
+                  <input type="date" />
+                </div>
+                <div class="field">
+                  <label>Fecha Hasta</label>
+                  <input type="date" />
+                </div>
+                <div class="field">
+                  <label> &nbsp;&nbsp;</label>
+                  <button type="submit" class="ui green button">
+                    Reservar
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
