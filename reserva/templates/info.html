@@ -10,12 +10,6 @@
       integrity="sha256-9mbkOfVho3ZPXfM7W8sV2SndrGDuh7wuyLjtsWeTI1Q="
       crossorigin="anonymous"
     />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
-      integrity="sha256-9mbkOfVho3ZPXfM7W8sV2SndrGDuh7wuyLjtsWeTI1Q="
-      crossorigin="anonymous"
-    />
     <title>Document</title>
   </head>
 
@@ -45,10 +39,10 @@
           </div>
           <div class="extra content">
             <h3>Reserva ya!</h3>
-              <form method="POST" class="post-form ui form">{% csrf_token %}
-                  {{ form }}
-                  <button type="submit" class="save btn btn-default">Save</button>
-              </form>
+            <form method="POST" class="post-form ui form">
+              {% csrf_token %} {{ form }}
+              <button type="submit" style="margin-top: 10px;" class="ui green button">Reservar</button>
+            </form>
           </div>
         </div>
       </div>

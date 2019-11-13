@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 from django.db import models
 
 
+
 class City(models.Model):
     name = models.CharField(max_length=50)
     province = models.CharField(max_length=50)
@@ -41,8 +42,3 @@ class RentDate(models.Model):
 
     def __str__(self):
         return self.date
-
-class RentForm(models.Model):
-    Nombre = models.CharField(max_length=50, default="")
-    Desde = models.DateTimeField()
-    Hasta = models.DateTimeField()
