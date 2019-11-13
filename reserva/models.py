@@ -26,10 +26,9 @@ class RealState(models.Model):
 
 
 class Reservation(models.Model):
-    date = models.DateTimeField()
+    name = models.CharField(max_length=50, default="")
     code = models.IntegerField()
     total = models.IntegerField()
-    RealState = models.ForeignKey(RealState, null=False, on_delete=models.SET('null'))
 
     def __str__(self):
         return datetime.strftime(self.date, '%d/%m/%Y')
@@ -42,3 +41,8 @@ class RentDate(models.Model):
 
     def __str__(self):
         return self.date
+
+class RentForm(models.Model):
+    Nombre = models.CharField(max_length=50, default="")
+    Desde = models.DateTimeField()
+    Hasta = models.DateTimeField()

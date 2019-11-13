@@ -21,7 +21,7 @@
 
   <body>
     <div class="ui top fixed pointing menu">
-      <a href="" class="active item">
+      <a href="../../" class="active item">
         Home
       </a>
     </div>
@@ -44,28 +44,11 @@
             </div>
           </div>
           <div class="extra content">
-            <form class="ui form">
-              <div class="ui four fields">
-                <div class="field">
-                  <label>Nombre</label>
-                  <input type="text" placeholder="Nombre" />
-                </div>
-                <div class="field">
-                  <label>Fecha Desde</label>
-                  <input type="date" />
-                </div>
-                <div class="field">
-                  <label>Fecha Hasta</label>
-                  <input type="date" />
-                </div>
-                <div class="field">
-                  <label> &nbsp;&nbsp;</label>
-                  <button type="submit" class="ui green button">
-                    Reservar
-                  </button>
-                </div>
-              </div>
-            </form>
+            <h3>Reserva ya!</h3>
+              <form method="POST" class="post-form ui form">{% csrf_token %}
+                  {{ form }}
+                  <button type="submit" class="save btn btn-default">Save</button>
+              </form>
           </div>
         </div>
       </div>

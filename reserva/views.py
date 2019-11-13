@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import RealState
+from .forms import ReserveForm
 
 def home(request):
     realStates = RealState.objects.all()
@@ -7,4 +8,6 @@ def home(request):
 
 def info(request,id=0):
     realState = RealState.objects.get(pk=id)
-    return render(request, 'info.html', {'realState': realState})
+    form = ReserveForm()
+    print(form)
+    return render(request, 'info.html', {'realState': realState, 'form': form})
