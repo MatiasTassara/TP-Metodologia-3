@@ -37,8 +37,8 @@ class Reservation(models.Model):
 
 class RentDate(models.Model):
     date = models.DateTimeField()
-    RealState = models.ForeignKey(RealState, null=False, on_delete=models.SET('null'))
-    reservation = models.ForeignKey(Reservation, null=False, on_delete=models.SET('null'))
+    RealState = models.ForeignKey(RealState, null=False, on_delete=models.SET('null'), related_name='rents')
+    reservation = models.ForeignKey(Reservation, null=True, blank=True, default=None, on_delete=models.SET('null'), related_name='rents')
 
     def __str__(self):
-        return self.date
+       return datetime.strftime(self.date, '%d/%m/%Y')
