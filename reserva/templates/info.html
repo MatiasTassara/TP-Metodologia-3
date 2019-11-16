@@ -20,6 +20,24 @@
       </a>
     </div>
     <div class="ui container" style="padding:65px">
+      {% if isReserved %}
+      <div class="ui positive message">
+        <i class="close icon"></i>
+        <div class="header">
+          Exito
+        </div>
+        <p>Su reserva ha sido procesada.</p>
+      </div>
+      {% endif %}
+      {% if err %}
+      <div class="ui negative message">
+        <i class="close icon"></i>
+        <div class="header">
+          Error!
+        </div>
+        <p>Las fechas solicitadas no estan disponibles</p>
+      </div>
+      {% endif %}
       <div class="ui segment">
         <h2>{{realState.name}}</h2>
         <div class="ui centered fluid card">
@@ -44,13 +62,20 @@
               <div>{{ fecha }}</div>
             </div>
             {% endfor %}
+            {%if availableDates|length == 0 %}
+            <p>No hay fechas disponibles aún</p>
+            {% endif %}
+            {% if availableDates|length > 0 %}
             <form method="POST" class="post-form ui form">
               {% csrf_token %} {{ form }}
               <button type="submit" style="margin-top: 10px;" class="ui green button">Reservar</button>
             </form>
+            {% endif %}
           </div>
         </div>
       </div>
     </div>
   </body>
+  <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+
 </html>

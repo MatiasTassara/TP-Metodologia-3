@@ -15,6 +15,8 @@ def home(request):
 def info(request,id=0):
     realState = RealState.objects.get(pk=id)
     availableDates = get_dates_available(id)
+    is_reserved = False
+    err = False
 
     #set_fechas_requeridas.add(datetime.date(2017,06,12))
     ##queremos crear dos sets, pero cambiar lel tipo de fecha a date , no datetime para que matchee cuando hagamos el issuperset
@@ -37,12 +39,14 @@ def info(request,id=0):
                     rentDate.update(reservation=reser)
                 availableDates = get_dates_available(id)
                 form = ReserveForm()
-
+                is_reserved = True
+            else:
+                err = True
 
     else:
         form = ReserveForm()
-
-    return render(request, 'info.html', {'realState': realState, 'form': form, 'availableDates': availableDates})
+    
+    return render(request, 'info.html', {'realState': realState, 'form': form, 'availableDates': availableDates, 'isReserved': is_reserved, 'err': err})
 
 def is_available(requiredDates,availableDates):
     return availableDates.issuperset(requiredDates)
