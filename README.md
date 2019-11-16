@@ -1,6 +1,6 @@
 # TP-Metodologia-3
 
-*Integrantes*
->Cañueto, Lisandro
->Moya, Fausto
->Tassara, Matias
+**Integrantes**
+Cañueto, Lisandro
+Moya, Fausto
+Tassara, Matias
