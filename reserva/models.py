@@ -31,14 +31,10 @@ class Reservation(models.Model):
     code = models.IntegerField()
     total = models.IntegerField()
 
-    def __str__(self):
-        return datetime.strftime(self.date, '%d/%m/%Y')
-
-
 class RentDate(models.Model):
-    date = models.DateTimeField()
+    date = models.DateField()
     RealState = models.ForeignKey(RealState, null=False, on_delete=models.SET('null'), related_name='rents')
     reservation = models.ForeignKey(Reservation, null=True, blank=True, default=None, on_delete=models.SET('null'), related_name='rents')
 
     def __str__(self):
-       return datetime.strftime(self.date, '%d/%m/%Y')
+        return datetime.strftime(self.date, '%d/%m/%Y') +  str(self.RealState) + str(self.id)
