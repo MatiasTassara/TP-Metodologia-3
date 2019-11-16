@@ -28,7 +28,7 @@
           </div>
           <div class="content">
             <p class="header">
-              {{realState.name}} - ${{realState.price}} por noche
+              {{realState.name}} - ${% widthratio realState.price 0.92 1 %} por noche
             </p>
             <div class="meta">
               <p>{{realState.city.province}}, {{realState.city.name}}</p>

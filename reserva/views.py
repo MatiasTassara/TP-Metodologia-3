@@ -3,6 +3,7 @@ from .models import RealState
 from .forms import ReserveForm
 from .models import RentDate
 from .models import Reservation
+from random import randrange
 import datetime
 
 def home(request):
@@ -26,9 +27,9 @@ def info(request,id=0):
             requiredDates= fechas_requeridas(dateFrom,dateTo)
             if is_available(requiredDates, availableDates):
                 reser = Reservation()
-                reser.name = 'hola'
-                reser.code = 1234
-                reser.total = 200
+                reser.name = form.cleaned_data['Nomrbre']
+                reser.code = randrange(20000)
+                reser.total = len(requiredDates)* (realState.price * 1.08)
                 reser.save()
                 for requiredDate in requiredDates:
                     print(requiredDate)
