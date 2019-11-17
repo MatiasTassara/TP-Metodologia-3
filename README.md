@@ -6,5 +6,5 @@
 - Tassara, Matias
 
 #### Usuarios:
--*admin:* admin
--*client:* atila1234
+- **admin:** admin
+- **client:** atila1234
