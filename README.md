@@ -4,3 +4,7 @@
 - Cañueto, Lisandro
 - Moya, Fausto
 - Tassara, Matias
+
+#### Usuarios:
+-*admin:* admin
+-*client:* atila1234
